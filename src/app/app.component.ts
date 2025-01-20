@@ -3,7 +3,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterOutlet } from '@angular/router';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
-import { FilterComponent } from './components/filter/filter.component';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 
@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
     AddTaskComponent,
     MatToolbarModule,
     TaskListComponent,
-    FilterComponent,
+
     MatInputModule
   ],
   templateUrl: './app.component.html',
@@ -24,4 +24,6 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class AppComponent {
   title = 'task-manager';
+ 
+
 }

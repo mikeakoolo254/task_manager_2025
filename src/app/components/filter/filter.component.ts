@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-filter',
+  selector: 'app-task-filter',
   standalone: true,
-  imports: [],
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.css'
+  styleUrls: ['./filter.component.css'],
+  imports:[CommonModule]
 })
 export class FilterComponent {
+  @Output() filterChanged = new EventEmitter<string>();
 
+  filterOptions: string[] = ['All', 'Completed', 'Pending'];
+  selectedFilter: string = 'All';
+
+  applyFilter(filter: string) {
+    this.selectedFilter = filter;
+    this.filterChanged.emit(filter); // Notify parent component
+  }
 }
